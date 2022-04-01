@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceContainer name="product.info.main">
+            <container name="regular.customer.form.section">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="oleksandrk.regular.customer.title"
+                       template="Oleksandrk_RegularCustomer::catalog/product/view/discount/regularCustomerFormTitle.phtml"
+                >
+                    <arguments>
+                        <argument name="title_regular_customers" xsi:type="string" translate="true">Loyalty Program For Regular Customers</argument>
+                    </arguments>
+                </block>
+                <container name="regular.customer.info" htmlTag="div" htmlClass="oleksandrk-personal-customers-condition">
+                    <block class="Magento\Cms\Block\BlockByIdentifier"
+                           name="oleksandrk.message.regular.customers.block"
+                           after="oleksandrk.regular.customer.title"
+                    >
+                        <arguments>
+                            <argument name="identifier" xsi:type="string">regular_customers_condition</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <block class="Oleksandrk\RegularCustomer\Block\Product\View\DiscountRequest"
+                       name="oleksandrk.regular.customer.request"
+                       template="Oleksandrk_RegularCustomer::catalog/product/view/discount/regularCustomerDiscountRequest.phtml"
+                >
+                    <arguments>
+                        <argument name="cache_lifetime" xsi:type="number">84600</argument>
+                        <argument name="request_submit_url"
+                                  path="oleksandrk_customer_regular/request/request" xsi:type="url"
+                        />
+                        <argument name="product"
+                                  helper="Magento\Catalog\Helper\Data::getProduct" xsi:type="helper"
+                        />
+                        <argument name="is_modal" xsi:type="boolean">true</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template"
+                       name="oleksandrk.personal.discount.form.open.button"
+                       template="Oleksandrk_RegularCustomer::catalog/product/view/discount/form_open_button.phtml"
+                />
+            </container>
+        </referenceContainer>
+    </body>
+</page>

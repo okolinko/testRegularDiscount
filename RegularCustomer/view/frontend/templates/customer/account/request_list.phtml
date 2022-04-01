@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+
+/** @var \Oleksandrk\RegularCustomer\ViewModel\Customer\RequestList $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+
+<ul>
+    <?php /** @var \Oleksandrk\RegularCustomer\Model\DiscountRegularRequest $discountRequest */ ?>
+    <?php foreach ($viewModel->getDiscountRegularRequestCollection() as $discountRequest): ?>
+        <?php $product = $viewModel->getProduct((int) $discountRequest->getProductId()); ?>
+        <li>
+            <span><?= $product ? $escaper->escapeHtml(__('Requested product: %1', $product->getName())) :
+                $escaper->escapeHtml(__('General Discount Request')) ?></span>
+            <br/>
+            <span><?= $escaper->escapeHtml(__('Name: %1', $discountRequest->getName())) ?></span>
+            <br/>
+            <span><?= $escaper->escapeHtml(__('Email: %1', $discountRequest->getEmail())) ?></span>
+            <br/>
+        </li>
+    <?php endforeach; ?>
+</ul>

@@ -1,0 +1,28 @@
+{
+    "oleksandrk_customer_regular_discount": {
+        "column": {
+            "request_id": true,
+            "product_id": true,
+            "customer_id": true,
+            "name": true,
+            "email": true,
+            "store_id": true,
+            "admin_user_id": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "OLEKSANDRK_CUSTOMER_REGULAR_DISCOUNT_PRODUCT_ID": true,
+            "OLEKSANDRK_CUSTOMER_REGULAR_DISCOUNT_CUSTOMER_ID": true,
+            "OLEKSANDRK_CUSTOMER_REGULAR_DISCOUNT_ADMIN_USER_ID": true,
+            "OLEKSANDRK_CUSTOMER_REGULAR_DISCOUNT_STORE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_A4B278DE2ABEE127B8DDEE39628B2D1C": true,
+            "M2_OLEKSANDRK_CSTR_REGULAR_DISCOUNT_CSTR_ID_M2_CSTR_ENTT_ENTT_ID": true,
+            "M2_OLEKSANDRK_CSTR_REGULAR_DISCOUNT_ADM_USR_ID_M2_ADM_USR_USR_ID": true,
+            "M2_OLEKSANDRK_CSTR_REGULAR_DISCOUNT_STORE_ID_M2_STORE_STORE_ID": true
+        }
+    }
+}

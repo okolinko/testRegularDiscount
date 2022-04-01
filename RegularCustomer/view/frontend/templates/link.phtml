@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+
+/* @var \Oleksandrk\RegularCustomer\Block\Link $block */
+?>
+
+<li class="link my-requests">
+    <a <?= /* @noEscape */ $block->getLinkAttributes() ?>><?= $block->escapeHtml($block->getLabel()) ?>
+    </a>
+</li>
